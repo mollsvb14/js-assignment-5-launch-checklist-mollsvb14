@@ -21,10 +21,17 @@ window.addEventListener("load", function() {
             return;
         }
 
+
+        if(validateInput(pilotNameInput.value)==="Is a Number" || validateInput(copilotNameInput.value)==="Is a Number"){
+            alert("Copilot and Pilot must have a alphabetical value!")
+            return;
+        }
+
         if(validateInput(fuelLevelInput.value)==="Not a Number" || validateInput(cargoMassInput.value)==="Not a Number"){
             alert("Fuel level and Cargo Mass have to have a numerical value!")
             return;
-        }
+        } 
+
 
         formSubmission(document ,"list", pilotNameInput.value, copilotNameInput.value, fuelLevelInput.value, cargoMassInput.value)
     });

@@ -31,13 +31,17 @@ if (fuelLevel<10000) {
     let launchStatus=document.getElementById("launchStatus")
     launchStatus.innerHTML="Shuttle not ready for launch"
     launchStatus.style.backgroundColor="red"
+    let fuelStatus = document.getElementById("fuelStatus");
+    fuelStatus.innerHTML = "Fuel level too low for launch"
 }
 
 if (cargoLevel>10000){
     faultyItems.style.visibility="visible"
-    let cargoStatus=document.getElementById("cargoStatus")
-     cargoStatus.innerHTML="Shuttle not ready for launch"
-    cargoStatus.style.backgroundColor="red"
+    let launchStatus=document.getElementById("launchStatus")
+    launchStatus.innerHTML="Shuttle not ready for launch"
+    launchStatus.style.backgroundColor="red"
+    let cargoStatus= document.getElementById("cargoStatus");
+    cargoStatus.innerHTML= "Cargo mass too high for launch"
 }
 if (fuelLevel>10000 && cargoLevel<10000){
     let launchStatus=document.getElementById("launchStatus")
