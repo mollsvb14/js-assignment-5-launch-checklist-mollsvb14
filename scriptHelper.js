@@ -25,9 +25,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    copilotNameInput.innerHTML=`${copilot} Ready`
 
    let faultyItems=document.getElementById("faultyItems");
+   faultyItems.style.visibility="visible"
    
 if (fuelLevel<10000) {
-    faultyItems.style.visibility="visible"
     let launchStatus=document.getElementById("launchStatus")
     launchStatus.innerHTML="Shuttle not ready for launch"
     launchStatus.style.backgroundColor="red"
@@ -36,14 +36,13 @@ if (fuelLevel<10000) {
 }
 
 if (cargoLevel>10000){
-    faultyItems.style.visibility="visible"
     let launchStatus=document.getElementById("launchStatus")
     launchStatus.innerHTML="Shuttle not ready for launch"
     launchStatus.style.backgroundColor="red"
     let cargoStatus= document.getElementById("cargoStatus");
     cargoStatus.innerHTML= "Cargo mass too high for launch"
 }
-if (fuelLevel>10000 && cargoLevel<10000){
+if (fuelLevel>=10000 && cargoLevel<10000){
     let launchStatus=document.getElementById("launchStatus")
     launchStatus.innerHTML="Shuttle is ready for launch"
     launchStatus.style.backgroundColor="green"
